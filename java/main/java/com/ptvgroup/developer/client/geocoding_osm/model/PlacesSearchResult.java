@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   PlacesSearchResult.JSON_PROPERTY_PLACES,
   PlacesSearchResult.JSON_PROPERTY_WARNINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-25T14:20:03.622958Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-25T14:36:44.155023Z[Etc/UTC]")
 public class PlacesSearchResult {
   public static final String JSON_PROPERTY_PLACES = "places";
   private List<Place> places;

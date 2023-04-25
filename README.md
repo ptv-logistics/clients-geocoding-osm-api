@@ -85,4 +85,4 @@ Language depending information:
 
  &nbsp;  
  &nbsp;  
- Please refer to our [Geocoding & Places API](https://developer.myptv.com/en/documentation/geocoding-places-api/quick-start-geocoding-api) documentation.
+ Please refer to our [Geocoding & Places API](https://developer.myptv.com/en/documentation/guide-geocoding-places-osm-api-experimental) documentation.
