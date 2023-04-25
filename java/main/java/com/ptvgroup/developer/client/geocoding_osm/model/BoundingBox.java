@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BoundingBox.JSON_PROPERTY_RIGHT,
   BoundingBox.JSON_PROPERTY_TOP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-25T13:50:21.651630Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-25T14:20:03.622958Z[Etc/UTC]")
 public class BoundingBox {
   public static final String JSON_PROPERTY_LEFT = "left";
   private Double left;

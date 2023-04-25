@@ -38,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Warning.JSON_PROPERTY_WARNING_CODE,
   Warning.JSON_PROPERTY_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-25T13:50:21.651630Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-25T14:20:03.622958Z[Etc/UTC]")
 public class Warning {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
