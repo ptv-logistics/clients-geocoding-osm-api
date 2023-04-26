@@ -1,4 +1,4 @@
-# Clients for the OSM Geocoding API (Version 1.0)
+# Clients for the Geocoding & Places OSM API (Version 1.0)
 
 Using client classes makes it easier and more convenient to integrate the API into an existing programming environment. We provide here clients for Java, C# and TypeScript. Alternatively you can generate the clients yourself by using this [tutorial](https://developer.myptv.com/en/resources/tutorials/general/how-generate-clients-ptv-developer-apis).
 
@@ -85,4 +85,4 @@ Language depending information:
 
  &nbsp;  
  &nbsp;  
- Please refer to our [Geocoding & Places API](https://developer.myptv.com/en/documentation/guide-geocoding-places-osm-api-experimental) documentation.
+ Please refer to our [Geocoding & Places OSM API](https://developer.myptv.com/en/documentation/guide-geocoding-places-osm-api-experimental) documentation.
