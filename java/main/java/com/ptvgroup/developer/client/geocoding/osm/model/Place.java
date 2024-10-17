@@ -11,13 +11,12 @@
  */
 
 
-package com.ptvgroup.developer.client.geocoding_osm.model;
+package com.ptvgroup.developer.client.geocoding.osm.model;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,11 +24,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.ptvgroup.developer.client.geocoding_osm.model.BoundingBox;
-import com.ptvgroup.developer.client.geocoding_osm.model.ReferencePosition;
+import com.ptvgroup.developer.client.geocoding.osm.model.BoundingBox;
+import com.ptvgroup.developer.client.geocoding.osm.model.ReferencePosition;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
 /**
  * Place
  */
@@ -40,7 +41,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Place.JSON_PROPERTY_CATEGORY,
   Place.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T12:14:54.222921Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Place {
   public static final String JSON_PROPERTY_REFERENCE_POSITION = "referencePosition";
   private ReferencePosition referencePosition;
@@ -65,14 +66,13 @@ public class Place {
     return this;
   }
 
-   /**
+  /**
    * Get referencePosition
    * @return referencePosition
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_REFERENCE_POSITION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public ReferencePosition getReferencePosition() {
     return referencePosition;
   }
@@ -90,14 +90,13 @@ public class Place {
     return this;
   }
 
-   /**
+  /**
    * Get boundingBox
    * @return boundingBox
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_BOUNDING_BOX)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-
   public BoundingBox getBoundingBox() {
     return boundingBox;
   }
@@ -115,14 +114,13 @@ public class Place {
     return this;
   }
 
-   /**
+  /**
    * A single string containing the name and all address elements of a place.
    * @return formattedAddress
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_FORMATTED_ADDRESS)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getFormattedAddress() {
     return formattedAddress;
   }
@@ -140,14 +138,13 @@ public class Place {
     return this;
   }
 
-   /**
+  /**
    * The category of this place, which corresponds to the key of the main OSM tag.
    * @return category
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_CATEGORY)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getCategory() {
     return category;
   }
@@ -165,14 +162,13 @@ public class Place {
     return this;
   }
 
-   /**
+  /**
    * The type of this place, which corresponds to the value of the main OSM tag. Each category is divided into different types.
    * @return type
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TYPE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getType() {
     return type;
   }
@@ -277,17 +273,17 @@ public class Place {
 
     // add `formattedAddress` to the URL query string
     if (getFormattedAddress() != null) {
-      joiner.add(String.format("%sformattedAddress%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFormattedAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sformattedAddress%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFormattedAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `category` to the URL query string
     if (getCategory() != null) {
-      joiner.add(String.format("%scategory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCategory()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%scategory%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCategory()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();

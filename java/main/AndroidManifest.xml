@@ -1,3 +1,3 @@
-<manifest package="com.ptvgroup.developer.client.geocoding_osm" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="com.ptvgroup.developer.client.geocoding.osm" xmlns:android="http://schemas.android.com/apk/res/android">
     <application />
 </manifest>

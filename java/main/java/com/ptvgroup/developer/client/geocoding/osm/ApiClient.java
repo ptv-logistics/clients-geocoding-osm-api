@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.ptvgroup.developer.client.geocoding_osm;
+package com.ptvgroup.developer.client.geocoding.osm;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -51,7 +51,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  * <p>The setter methods of this class return the current object to facilitate
  * a fluent style of configuration.</p>
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T12:14:54.222921Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class ApiClient {
 
   private HttpClient.Builder builder;
@@ -66,7 +66,7 @@ public class ApiClient {
   private Duration readTimeout;
   private Duration connectTimeout;
 
-  private static String valueToString(Object value) {
+  public static String valueToString(Object value) {
     if (value == null) {
       return "";
     }

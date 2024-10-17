@@ -11,13 +11,12 @@
  */
 
 
-package com.ptvgroup.developer.client.geocoding_osm.model;
+package com.ptvgroup.developer.client.geocoding.osm.model;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,11 +24,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
 /**
  * Warning
  */
@@ -38,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   Warning.JSON_PROPERTY_WARNING_CODE,
   Warning.JSON_PROPERTY_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T12:14:54.222921Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class Warning {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;
@@ -57,14 +58,13 @@ public class Warning {
     return this;
   }
 
-   /**
+  /**
    * A human readable message that describes the warning.
    * @return description
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_DESCRIPTION)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getDescription() {
     return description;
   }
@@ -82,14 +82,13 @@ public class Warning {
     return this;
   }
 
-   /**
+  /**
    * A constant string that can be used to identify this warning class programmatically. A warningCode can have **details** to provide information in additional properties which are described with the code they apply to. They are of type string unless otherwise specified.    Note that additional warningCodes as well as the **details** of existing warningCodes may be added at any time. Furthermore, the **description** may change at any time.    * &#x60;GEOCODING_TIMEOUT&#x60; - The search ran into a timeout while trying to find results.   * &#x60;GEOCODING_INPUT_TOO_LONG&#x60; - The input was rejected because it is too long.     * &#x60;maximumSize&#x60; - The maximum allowed size of the single input field &#x60;searchText&#x60;.
    * @return warningCode
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_WARNING_CODE)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public String getWarningCode() {
     return warningCode;
   }
@@ -108,18 +107,20 @@ public class Warning {
   }
 
   public Warning putDetailsItem(String key, Object detailsItem) {
+    if (this.details == null) {
+      this.details = new HashMap<>();
+    }
     this.details.put(key, detailsItem);
     return this;
   }
 
-   /**
+  /**
    * Additional properties specific to this class of warnings.
    * @return details
-  **/
+   */
   @javax.annotation.Nullable
   @JsonProperty(JSON_PROPERTY_DETAILS)
   @JsonInclude(content = JsonInclude.Include.ALWAYS, value = JsonInclude.Include.USE_DEFAULTS)
-
   public Map<String, Object> getDetails() {
     return details;
   }
@@ -210,12 +211,12 @@ public class Warning {
 
     // add `description` to the URL query string
     if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getDescription()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `warningCode` to the URL query string
     if (getWarningCode() != null) {
-      joiner.add(String.format("%swarningCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getWarningCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%swarningCode%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getWarningCode()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `details` to the URL query string
@@ -223,7 +224,7 @@ public class Warning {
       for (String _key : getDetails().keySet()) {
         joiner.add(String.format("%sdetails%s%s=%s", prefix, suffix,
             "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, _key, containerSuffix),
-            getDetails().get(_key), URLEncoder.encode(String.valueOf(getDetails().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+            getDetails().get(_key), URLEncoder.encode(ApiClient.valueToString(getDetails().get(_key)), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
       }
     }
 

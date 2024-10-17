@@ -10,16 +10,16 @@
  * Do not edit the class manually.
  */
 
-package com.ptvgroup.developer.client.geocoding_osm.api;
+package com.ptvgroup.developer.client.geocoding.osm.api;
 
-import com.ptvgroup.developer.client.geocoding_osm.ApiClient;
-import com.ptvgroup.developer.client.geocoding_osm.ApiException;
-import com.ptvgroup.developer.client.geocoding_osm.ApiResponse;
-import com.ptvgroup.developer.client.geocoding_osm.Pair;
+import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
+import com.ptvgroup.developer.client.geocoding.osm.ApiException;
+import com.ptvgroup.developer.client.geocoding.osm.ApiResponse;
+import com.ptvgroup.developer.client.geocoding.osm.Pair;
 
-import com.ptvgroup.developer.client.geocoding_osm.model.DetailLevel;
-import com.ptvgroup.developer.client.geocoding_osm.model.ErrorResponse;
-import com.ptvgroup.developer.client.geocoding_osm.model.PlacesSearchResult;
+import com.ptvgroup.developer.client.geocoding.osm.model.DetailLevel;
+import com.ptvgroup.developer.client.geocoding.osm.model.ErrorResponse;
+import com.ptvgroup.developer.client.geocoding.osm.model.PlacesSearchResult;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -46,7 +46,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T12:14:54.222921Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class PlacesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -93,7 +93,7 @@ public class PlacesApi {
    * @param postalCode The postal code, or zip-code, which is used by a postal authority of a country to identify where the address is located. (optional)
    * @param street The name of the road where the address is located. It may contain a house number, but using the **houseNumber** field instead will lead to better results. (optional)
    * @param houseNumber The house number of the address. (optional)
-   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional
+   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)
    * @return PlacesSearchResult
    * @throws ApiException if fails to make API call
    */
@@ -112,7 +112,7 @@ public class PlacesApi {
    * @param postalCode The postal code, or zip-code, which is used by a postal authority of a country to identify where the address is located. (optional)
    * @param street The name of the road where the address is located. It may contain a house number, but using the **houseNumber** field instead will lead to better results. (optional)
    * @param houseNumber The house number of the address. (optional)
-   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional
+   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)
    * @return ApiResponse&lt;PlacesSearchResult&gt;
    * @throws ApiException if fails to make API call
    */
@@ -194,13 +194,14 @@ public class PlacesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * 
    * Searches for places near a given geographical position.
    * @param latitude  (required)
    * @param longitude  (required)
    * @param detailLevel Detail level of the address. (optional)
-   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional
+   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)
    * @return PlacesSearchResult
    * @throws ApiException if fails to make API call
    */
@@ -215,7 +216,7 @@ public class PlacesApi {
    * @param latitude  (required)
    * @param longitude  (required)
    * @param detailLevel Detail level of the address. (optional)
-   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional
+   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)
    * @return ApiResponse&lt;PlacesSearchResult&gt;
    * @throws ApiException if fails to make API call
    */
@@ -295,11 +296,12 @@ public class PlacesApi {
     }
     return localVarRequestBuilder;
   }
+
   /**
    * 
    * Searches for places based on a single-field text input.
    * @param searchText Free-form text input that describes a place. (required)
-   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional
+   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)
    * @return PlacesSearchResult
    * @throws ApiException if fails to make API call
    */
@@ -312,7 +314,7 @@ public class PlacesApi {
    * 
    * Searches for places based on a single-field text input.
    * @param searchText Free-form text input that describes a place. (required)
-   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional
+   * @param languages A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)
    * @return ApiResponse&lt;PlacesSearchResult&gt;
    * @throws ApiException if fails to make API call
    */
@@ -386,4 +388,5 @@ public class PlacesApi {
     }
     return localVarRequestBuilder;
   }
+
 }

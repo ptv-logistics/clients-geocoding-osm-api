@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.ptvgroup.developer.client.geocoding_osm;
+package com.ptvgroup.developer.client.geocoding.osm;
 
 import com.fasterxml.jackson.databind.util.StdDateFormat;
 
@@ -22,6 +22,7 @@ import java.text.DecimalFormat;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class RFC3339DateFormat extends DateFormat {
   private static final long serialVersionUID = 1L;
   private static final TimeZone TIMEZONE_Z = TimeZone.getTimeZone("UTC");

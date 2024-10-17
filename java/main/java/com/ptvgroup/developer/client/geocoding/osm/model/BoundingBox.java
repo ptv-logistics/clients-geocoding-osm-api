@@ -11,13 +11,12 @@
  */
 
 
-package com.ptvgroup.developer.client.geocoding_osm.model;
+package com.ptvgroup.developer.client.geocoding.osm.model;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -25,9 +24,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
+import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
 /**
  * Corner coordinates of the area surrounding the place.
  */
@@ -37,7 +38,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
   BoundingBox.JSON_PROPERTY_RIGHT,
   BoundingBox.JSON_PROPERTY_TOP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-04-26T12:14:54.222921Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class BoundingBox {
   public static final String JSON_PROPERTY_LEFT = "left";
   private Double left;
@@ -59,16 +60,15 @@ public class BoundingBox {
     return this;
   }
 
-   /**
+  /**
    * The longitude value in degrees (WGS84/EPSG:4326) from west to east.
    * minimum: -180
    * maximum: 180
    * @return left
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_LEFT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public Double getLeft() {
     return left;
   }
@@ -86,16 +86,15 @@ public class BoundingBox {
     return this;
   }
 
-   /**
+  /**
    * The latitude value in degrees (WGS84/EPSG:4326) from south to north.
    * minimum: -90
    * maximum: 90
    * @return bottom
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_BOTTOM)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public Double getBottom() {
     return bottom;
   }
@@ -113,16 +112,15 @@ public class BoundingBox {
     return this;
   }
 
-   /**
+  /**
    * The longitude value in degrees (WGS84/EPSG:4326) from west to east.
    * minimum: -180
    * maximum: 180
    * @return right
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_RIGHT)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public Double getRight() {
     return right;
   }
@@ -140,16 +138,15 @@ public class BoundingBox {
     return this;
   }
 
-   /**
+  /**
    * The latitude value in degrees (WGS84/EPSG:4326) from south to north.
    * minimum: -90
    * maximum: 90
    * @return top
-  **/
+   */
   @javax.annotation.Nonnull
   @JsonProperty(JSON_PROPERTY_TOP)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-
   public Double getTop() {
     return top;
   }
@@ -242,22 +239,22 @@ public class BoundingBox {
 
     // add `left` to the URL query string
     if (getLeft() != null) {
-      joiner.add(String.format("%sleft%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLeft()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sleft%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLeft()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `bottom` to the URL query string
     if (getBottom() != null) {
-      joiner.add(String.format("%sbottom%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBottom()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sbottom%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBottom()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `right` to the URL query string
     if (getRight() != null) {
-      joiner.add(String.format("%sright%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRight()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%sright%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRight()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     // add `top` to the URL query string
     if (getTop() != null) {
-      joiner.add(String.format("%stop%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTop()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format("%stop%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTop()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
     }
 
     return joiner.toString();
