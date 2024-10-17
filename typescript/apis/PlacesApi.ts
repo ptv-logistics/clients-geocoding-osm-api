@@ -18,7 +18,7 @@ import type {
   DetailLevel,
   ErrorResponse,
   PlacesSearchResult,
-} from '../models';
+} from '../models/index';
 import {
     DetailLevelFromJSON,
     DetailLevelToJSON,
@@ -26,7 +26,7 @@ import {
     ErrorResponseToJSON,
     PlacesSearchResultFromJSON,
     PlacesSearchResultToJSON,
-} from '../models';
+} from '../models/index';
 
 export interface SearchPlacesByAddressRequest {
     country?: string;
@@ -62,43 +62,43 @@ export class PlacesApi extends runtime.BaseAPI {
     async searchPlacesByAddressRaw(requestParameters: SearchPlacesByAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.country !== undefined) {
-            queryParameters['country'] = requestParameters.country;
+        if (requestParameters['country'] != null) {
+            queryParameters['country'] = requestParameters['country'];
         }
 
-        if (requestParameters.state !== undefined) {
-            queryParameters['state'] = requestParameters.state;
+        if (requestParameters['state'] != null) {
+            queryParameters['state'] = requestParameters['state'];
         }
 
-        if (requestParameters.province !== undefined) {
-            queryParameters['province'] = requestParameters.province;
+        if (requestParameters['province'] != null) {
+            queryParameters['province'] = requestParameters['province'];
         }
 
-        if (requestParameters.locality !== undefined) {
-            queryParameters['locality'] = requestParameters.locality;
+        if (requestParameters['locality'] != null) {
+            queryParameters['locality'] = requestParameters['locality'];
         }
 
-        if (requestParameters.postalCode !== undefined) {
-            queryParameters['postalCode'] = requestParameters.postalCode;
+        if (requestParameters['postalCode'] != null) {
+            queryParameters['postalCode'] = requestParameters['postalCode'];
         }
 
-        if (requestParameters.street !== undefined) {
-            queryParameters['street'] = requestParameters.street;
+        if (requestParameters['street'] != null) {
+            queryParameters['street'] = requestParameters['street'];
         }
 
-        if (requestParameters.houseNumber !== undefined) {
-            queryParameters['houseNumber'] = requestParameters.houseNumber;
+        if (requestParameters['houseNumber'] != null) {
+            queryParameters['houseNumber'] = requestParameters['houseNumber'];
         }
 
-        if (requestParameters.languages) {
-            queryParameters['languages'] = requestParameters.languages.join(runtime.COLLECTION_FORMATS["csv"]);
+        if (requestParameters['languages'] != null) {
+            queryParameters['languages'] = requestParameters['languages']!.join(runtime.COLLECTION_FORMATS["csv"]);
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
 		headerParameters['User-Agent'] = "ptv-generated typescript client";
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["apiKey"] = this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
+            headerParameters["apiKey"] = await this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
         }
 
         const response = await this.request({
@@ -123,33 +123,39 @@ export class PlacesApi extends runtime.BaseAPI {
      * Searches for places near a given geographical position.
      */
     async searchPlacesByPositionRaw(requestParameters: SearchPlacesByPositionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
-        if (requestParameters.latitude === null || requestParameters.latitude === undefined) {
-            throw new runtime.RequiredError('latitude','Required parameter requestParameters.latitude was null or undefined when calling searchPlacesByPosition.');
+        if (requestParameters['latitude'] == null) {
+            throw new runtime.RequiredError(
+                'latitude',
+                'Required parameter "latitude" was null or undefined when calling searchPlacesByPosition().'
+            );
         }
 
-        if (requestParameters.longitude === null || requestParameters.longitude === undefined) {
-            throw new runtime.RequiredError('longitude','Required parameter requestParameters.longitude was null or undefined when calling searchPlacesByPosition.');
+        if (requestParameters['longitude'] == null) {
+            throw new runtime.RequiredError(
+                'longitude',
+                'Required parameter "longitude" was null or undefined when calling searchPlacesByPosition().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.detailLevel !== undefined) {
-            queryParameters['detailLevel'] = requestParameters.detailLevel;
+        if (requestParameters['detailLevel'] != null) {
+            queryParameters['detailLevel'] = requestParameters['detailLevel'];
         }
 
-        if (requestParameters.languages) {
-            queryParameters['languages'] = requestParameters.languages.join(runtime.COLLECTION_FORMATS["csv"]);
+        if (requestParameters['languages'] != null) {
+            queryParameters['languages'] = requestParameters['languages']!.join(runtime.COLLECTION_FORMATS["csv"]);
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
 		headerParameters['User-Agent'] = "ptv-generated typescript client";
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["apiKey"] = this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
+            headerParameters["apiKey"] = await this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
         }
 
         const response = await this.request({
-            path: `/places/by-position/{latitude}/{longitude}`.replace(`{${"latitude"}}`, encodeURIComponent(String(requestParameters.latitude))).replace(`{${"longitude"}}`, encodeURIComponent(String(requestParameters.longitude))),
+            path: `/places/by-position/{latitude}/{longitude}`.replace(`{${"latitude"}}`, encodeURIComponent(String(requestParameters['latitude']))).replace(`{${"longitude"}}`, encodeURIComponent(String(requestParameters['longitude']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -170,25 +176,28 @@ export class PlacesApi extends runtime.BaseAPI {
      * Searches for places based on a single-field text input.
      */
     async searchPlacesByTextRaw(requestParameters: SearchPlacesByTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
-        if (requestParameters.searchText === null || requestParameters.searchText === undefined) {
-            throw new runtime.RequiredError('searchText','Required parameter requestParameters.searchText was null or undefined when calling searchPlacesByText.');
+        if (requestParameters['searchText'] == null) {
+            throw new runtime.RequiredError(
+                'searchText',
+                'Required parameter "searchText" was null or undefined when calling searchPlacesByText().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.searchText !== undefined) {
-            queryParameters['searchText'] = requestParameters.searchText;
+        if (requestParameters['searchText'] != null) {
+            queryParameters['searchText'] = requestParameters['searchText'];
         }
 
-        if (requestParameters.languages) {
-            queryParameters['languages'] = requestParameters.languages.join(runtime.COLLECTION_FORMATS["csv"]);
+        if (requestParameters['languages'] != null) {
+            queryParameters['languages'] = requestParameters['languages']!.join(runtime.COLLECTION_FORMATS["csv"]);
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
 		headerParameters['User-Agent'] = "ptv-generated typescript client";
 
         if (this.configuration && this.configuration.apiKey) {
-            headerParameters["apiKey"] = this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
+            headerParameters["apiKey"] = await this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
         }
 
         const response = await this.request({

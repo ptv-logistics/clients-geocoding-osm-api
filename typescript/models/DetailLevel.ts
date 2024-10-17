@@ -30,6 +30,17 @@ export const DetailLevel = {
 export type DetailLevel = typeof DetailLevel[keyof typeof DetailLevel];
 
 
+export function instanceOfDetailLevel(value: any): boolean {
+    for (const key in DetailLevel) {
+        if (Object.prototype.hasOwnProperty.call(DetailLevel, key)) {
+            if (DetailLevel[key as keyof typeof DetailLevel] === value) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 export function DetailLevelFromJSON(json: any): DetailLevel {
     return DetailLevelFromJSONTyped(json, false);
 }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Corner coordinates of the area surrounding the place.
  * @export
@@ -48,14 +48,12 @@ export interface BoundingBox {
 /**
  * Check if a given object implements the BoundingBox interface.
  */
-export function instanceOfBoundingBox(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "left" in value;
-    isInstance = isInstance && "bottom" in value;
-    isInstance = isInstance && "right" in value;
-    isInstance = isInstance && "top" in value;
-
-    return isInstance;
+export function instanceOfBoundingBox(value: object): value is BoundingBox {
+    if (!('left' in value) || value['left'] === undefined) return false;
+    if (!('bottom' in value) || value['bottom'] === undefined) return false;
+    if (!('right' in value) || value['right'] === undefined) return false;
+    if (!('top' in value) || value['top'] === undefined) return false;
+    return true;
 }
 
 export function BoundingBoxFromJSON(json: any): BoundingBox {
@@ -63,7 +61,7 @@ export function BoundingBoxFromJSON(json: any): BoundingBox {
 }
 
 export function BoundingBoxFromJSONTyped(json: any, ignoreDiscriminator: boolean): BoundingBox {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -76,18 +74,15 @@ export function BoundingBoxFromJSONTyped(json: any, ignoreDiscriminator: boolean
 }
 
 export function BoundingBoxToJSON(value?: BoundingBox | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'left': value.left,
-        'bottom': value.bottom,
-        'right': value.right,
-        'top': value.top,
+        'left': value['left'],
+        'bottom': value['bottom'],
+        'right': value['right'],
+        'top': value['top'],
     };
 }
 

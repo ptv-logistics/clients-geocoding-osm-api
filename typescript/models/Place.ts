@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { BoundingBox } from './BoundingBox';
 import {
     BoundingBoxFromJSON,
@@ -67,14 +67,12 @@ export interface Place {
 /**
  * Check if a given object implements the Place interface.
  */
-export function instanceOfPlace(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "referencePosition" in value;
-    isInstance = isInstance && "formattedAddress" in value;
-    isInstance = isInstance && "category" in value;
-    isInstance = isInstance && "type" in value;
-
-    return isInstance;
+export function instanceOfPlace(value: object): value is Place {
+    if (!('referencePosition' in value) || value['referencePosition'] === undefined) return false;
+    if (!('formattedAddress' in value) || value['formattedAddress'] === undefined) return false;
+    if (!('category' in value) || value['category'] === undefined) return false;
+    if (!('type' in value) || value['type'] === undefined) return false;
+    return true;
 }
 
 export function PlaceFromJSON(json: any): Place {
@@ -82,13 +80,13 @@ export function PlaceFromJSON(json: any): Place {
 }
 
 export function PlaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): Place {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'referencePosition': ReferencePositionFromJSON(json['referencePosition']),
-        'boundingBox': !exists(json, 'boundingBox') ? undefined : BoundingBoxFromJSON(json['boundingBox']),
+        'boundingBox': json['boundingBox'] == null ? undefined : BoundingBoxFromJSON(json['boundingBox']),
         'formattedAddress': json['formattedAddress'],
         'category': json['category'],
         'type': json['type'],
@@ -96,19 +94,16 @@ export function PlaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): Pla
 }
 
 export function PlaceToJSON(value?: Place | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'referencePosition': ReferencePositionToJSON(value.referencePosition),
-        'boundingBox': BoundingBoxToJSON(value.boundingBox),
-        'formattedAddress': value.formattedAddress,
-        'category': value.category,
-        'type': value.type,
+        'referencePosition': ReferencePositionToJSON(value['referencePosition']),
+        'boundingBox': BoundingBoxToJSON(value['boundingBox']),
+        'formattedAddress': value['formattedAddress'],
+        'category': value['category'],
+        'type': value['type'],
     };
 }
 
