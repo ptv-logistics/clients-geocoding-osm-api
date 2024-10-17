@@ -12,7 +12,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// A dictionary in which one key has many associated values.

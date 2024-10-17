@@ -11,7 +11,7 @@
 using System;
 using System.IO;
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// Contract for Synchronous RESTful API interactions.

@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// Provides a non-generic contract for the ApiResponse wrapper.

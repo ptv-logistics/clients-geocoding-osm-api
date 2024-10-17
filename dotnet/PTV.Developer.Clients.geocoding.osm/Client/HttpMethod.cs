@@ -8,7 +8,7 @@
  */
 
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// Http methods supported by swagger

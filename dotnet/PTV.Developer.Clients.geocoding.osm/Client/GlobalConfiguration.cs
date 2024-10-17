@@ -10,7 +10,7 @@
 
 using System.Collections.Generic;
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring

@@ -11,7 +11,7 @@
 using Polly;
 using RestSharp;
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// Configuration class to set the polly retry policies to be applied to the requests.

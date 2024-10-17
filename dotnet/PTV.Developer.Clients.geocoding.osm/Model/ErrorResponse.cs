@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = PTV.Developer.Clients.geocoding_osm.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = PTV.Developer.Clients.geocoding.osm.Client.OpenAPIDateConverter;
 
-namespace PTV.Developer.Clients.geocoding_osm.Model
+namespace PTV.Developer.Clients.geocoding.osm.Model
 {
     /// <summary>
     /// ErrorResponse
@@ -95,7 +95,7 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
         /// A unique identifier specific to this error instance. It can be used to trace errors by the support.
         /// </summary>
         /// <value>A unique identifier specific to this error instance. It can be used to trace errors by the support.</value>
-        [DataMember(Name = "errorId", EmitDefaultValue = false)]
+        [DataMember(Name = "errorId", EmitDefaultValue = true)]
         public string ErrorId { get; set; }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

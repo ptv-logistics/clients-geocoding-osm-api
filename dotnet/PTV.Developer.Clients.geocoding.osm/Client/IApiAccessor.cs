@@ -10,7 +10,7 @@
 
 using System;
 
-namespace PTV.Developer.Clients.geocoding_osm.Client
+namespace PTV.Developer.Clients.geocoding.osm.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.

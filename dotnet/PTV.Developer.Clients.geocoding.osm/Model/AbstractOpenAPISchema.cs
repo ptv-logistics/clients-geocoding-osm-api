@@ -12,7 +12,7 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace PTV.Developer.Clients.geocoding_osm.Model
+namespace PTV.Developer.Clients.geocoding.osm.Model
 {
     /// <summary>
     ///  Abstract base class for oneOf, anyOf schemas in the OpenAPI specification

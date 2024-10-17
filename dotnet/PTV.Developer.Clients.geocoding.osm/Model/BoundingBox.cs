@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = PTV.Developer.Clients.geocoding_osm.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = PTV.Developer.Clients.geocoding.osm.Client.OpenAPIDateConverter;
 
-namespace PTV.Developer.Clients.geocoding_osm.Model
+namespace PTV.Developer.Clients.geocoding.osm.Model
 {
     /// <summary>
     /// Corner coordinates of the area surrounding the place.
@@ -43,11 +43,31 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
         /// <param name="bottom">The latitude value in degrees (WGS84/EPSG:4326) from south to north. (required).</param>
         /// <param name="right">The longitude value in degrees (WGS84/EPSG:4326) from west to east. (required).</param>
         /// <param name="top">The latitude value in degrees (WGS84/EPSG:4326) from south to north. (required).</param>
-        public BoundingBox(double left = default(double), double bottom = default(double), double right = default(double), double top = default(double))
+        public BoundingBox(double? left = default(double?), double? bottom = default(double?), double? right = default(double?), double? top = default(double?))
         {
+            // to ensure "left" is required (not null)
+            if (left == null)
+            {
+                throw new ArgumentNullException("left is a required property for BoundingBox and cannot be null");
+            }
             this.Left = left;
+            // to ensure "bottom" is required (not null)
+            if (bottom == null)
+            {
+                throw new ArgumentNullException("bottom is a required property for BoundingBox and cannot be null");
+            }
             this.Bottom = bottom;
+            // to ensure "right" is required (not null)
+            if (right == null)
+            {
+                throw new ArgumentNullException("right is a required property for BoundingBox and cannot be null");
+            }
             this.Right = right;
+            // to ensure "top" is required (not null)
+            if (top == null)
+            {
+                throw new ArgumentNullException("top is a required property for BoundingBox and cannot be null");
+            }
             this.Top = top;
         }
 
@@ -56,28 +76,28 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
         /// </summary>
         /// <value>The longitude value in degrees (WGS84/EPSG:4326) from west to east.</value>
         [DataMember(Name = "left", IsRequired = true, EmitDefaultValue = true)]
-        public double Left { get; set; }
+        public double? Left { get; set; }
 
         /// <summary>
         /// The latitude value in degrees (WGS84/EPSG:4326) from south to north.
         /// </summary>
         /// <value>The latitude value in degrees (WGS84/EPSG:4326) from south to north.</value>
         [DataMember(Name = "bottom", IsRequired = true, EmitDefaultValue = true)]
-        public double Bottom { get; set; }
+        public double? Bottom { get; set; }
 
         /// <summary>
         /// The longitude value in degrees (WGS84/EPSG:4326) from west to east.
         /// </summary>
         /// <value>The longitude value in degrees (WGS84/EPSG:4326) from west to east.</value>
         [DataMember(Name = "right", IsRequired = true, EmitDefaultValue = true)]
-        public double Right { get; set; }
+        public double? Right { get; set; }
 
         /// <summary>
         /// The latitude value in degrees (WGS84/EPSG:4326) from south to north.
         /// </summary>
         /// <value>The latitude value in degrees (WGS84/EPSG:4326) from south to north.</value>
         [DataMember(Name = "top", IsRequired = true, EmitDefaultValue = true)]
-        public double Top { get; set; }
+        public double? Top { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -128,19 +148,23 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
             return 
                 (
                     this.Left == input.Left ||
-                    this.Left.Equals(input.Left)
+                    (this.Left != null &&
+                    this.Left.Equals(input.Left))
                 ) && 
                 (
                     this.Bottom == input.Bottom ||
-                    this.Bottom.Equals(input.Bottom)
+                    (this.Bottom != null &&
+                    this.Bottom.Equals(input.Bottom))
                 ) && 
                 (
                     this.Right == input.Right ||
-                    this.Right.Equals(input.Right)
+                    (this.Right != null &&
+                    this.Right.Equals(input.Right))
                 ) && 
                 (
                     this.Top == input.Top ||
-                    this.Top.Equals(input.Top)
+                    (this.Top != null &&
+                    this.Top.Equals(input.Top))
                 );
         }
 
@@ -153,10 +177,22 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Left.GetHashCode();
-                hashCode = (hashCode * 59) + this.Bottom.GetHashCode();
-                hashCode = (hashCode * 59) + this.Right.GetHashCode();
-                hashCode = (hashCode * 59) + this.Top.GetHashCode();
+                if (this.Left != null)
+                {
+                    hashCode = (hashCode * 59) + this.Left.GetHashCode();
+                }
+                if (this.Bottom != null)
+                {
+                    hashCode = (hashCode * 59) + this.Bottom.GetHashCode();
+                }
+                if (this.Right != null)
+                {
+                    hashCode = (hashCode * 59) + this.Right.GetHashCode();
+                }
+                if (this.Top != null)
+                {
+                    hashCode = (hashCode * 59) + this.Top.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -166,54 +202,54 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Left (double) maximum
-            if (this.Left > (double)180)
+            // Left (double?) maximum
+            if (this.Left > (double?)180)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Left, must be a value less than or equal to 180.", new [] { "Left" });
+                yield return new ValidationResult("Invalid value for Left, must be a value less than or equal to 180.", new [] { "Left" });
             }
 
-            // Left (double) minimum
-            if (this.Left < (double)-180)
+            // Left (double?) minimum
+            if (this.Left < (double?)-180)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Left, must be a value greater than or equal to -180.", new [] { "Left" });
+                yield return new ValidationResult("Invalid value for Left, must be a value greater than or equal to -180.", new [] { "Left" });
             }
 
-            // Bottom (double) maximum
-            if (this.Bottom > (double)90)
+            // Bottom (double?) maximum
+            if (this.Bottom > (double?)90)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Bottom, must be a value less than or equal to 90.", new [] { "Bottom" });
+                yield return new ValidationResult("Invalid value for Bottom, must be a value less than or equal to 90.", new [] { "Bottom" });
             }
 
-            // Bottom (double) minimum
-            if (this.Bottom < (double)-90)
+            // Bottom (double?) minimum
+            if (this.Bottom < (double?)-90)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Bottom, must be a value greater than or equal to -90.", new [] { "Bottom" });
+                yield return new ValidationResult("Invalid value for Bottom, must be a value greater than or equal to -90.", new [] { "Bottom" });
             }
 
-            // Right (double) maximum
-            if (this.Right > (double)180)
+            // Right (double?) maximum
+            if (this.Right > (double?)180)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Right, must be a value less than or equal to 180.", new [] { "Right" });
+                yield return new ValidationResult("Invalid value for Right, must be a value less than or equal to 180.", new [] { "Right" });
             }
 
-            // Right (double) minimum
-            if (this.Right < (double)-180)
+            // Right (double?) minimum
+            if (this.Right < (double?)-180)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Right, must be a value greater than or equal to -180.", new [] { "Right" });
+                yield return new ValidationResult("Invalid value for Right, must be a value greater than or equal to -180.", new [] { "Right" });
             }
 
-            // Top (double) maximum
-            if (this.Top > (double)90)
+            // Top (double?) maximum
+            if (this.Top > (double?)90)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Top, must be a value less than or equal to 90.", new [] { "Top" });
+                yield return new ValidationResult("Invalid value for Top, must be a value less than or equal to 90.", new [] { "Top" });
             }
 
-            // Top (double) minimum
-            if (this.Top < (double)-90)
+            // Top (double?) minimum
+            if (this.Top < (double?)-90)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Top, must be a value greater than or equal to -90.", new [] { "Top" });
+                yield return new ValidationResult("Invalid value for Top, must be a value greater than or equal to -90.", new [] { "Top" });
             }
 
             yield break;

@@ -21,9 +21,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = PTV.Developer.Clients.geocoding_osm.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = PTV.Developer.Clients.geocoding.osm.Client.OpenAPIDateConverter;
 
-namespace PTV.Developer.Clients.geocoding_osm.Model
+namespace PTV.Developer.Clients.geocoding.osm.Model
 {
     /// <summary>
     /// Defines DetailLevel
@@ -78,7 +78,6 @@ namespace PTV.Developer.Clients.geocoding_osm.Model
         /// </summary>
         [EnumMember(Value = "BUILDING")]
         BUILDING = 8
-
     }
 
 }
