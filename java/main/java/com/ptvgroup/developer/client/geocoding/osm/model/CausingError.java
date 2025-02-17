@@ -40,7 +40,7 @@ import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
   CausingError.JSON_PROPERTY_PARAMETER,
   CausingError.JSON_PROPERTY_DETAILS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T10:15:15.367389526Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class CausingError {
   public static final String JSON_PROPERTY_DESCRIPTION = "description";
   private String description;

@@ -38,7 +38,7 @@ import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
   BoundingBox.JSON_PROPERTY_RIGHT,
   BoundingBox.JSON_PROPERTY_TOP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T10:15:15.367389526Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class BoundingBox {
   public static final String JSON_PROPERTY_LEFT = "left";
   private Double left;

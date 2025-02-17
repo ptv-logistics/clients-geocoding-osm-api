@@ -46,7 +46,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-10-17T13:01:59.360721664Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-17T10:15:15.367389526Z[Etc/UTC]", comments = "Generator version: 7.8.0")
 public class PlacesApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -148,7 +148,6 @@ public class PlacesApi {
   private HttpRequest.Builder searchPlacesByAddressRequestBuilder(String country, String state, String province, String locality, String postalCode, String street, String houseNumber, List<String> languages) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-		localVarRequestBuilder.header("User-Agent","ptv-generated java client");
 
     String localVarPath = "/places/by-address";
 
@@ -260,7 +259,6 @@ public class PlacesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-		localVarRequestBuilder.header("User-Agent","ptv-generated java client");
 
     String localVarPath = "/places/by-position/{latitude}/{longitude}"
         .replace("{latitude}", ApiClient.urlEncode(latitude.toString()))
@@ -354,7 +352,6 @@ public class PlacesApi {
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
-		localVarRequestBuilder.header("User-Agent","ptv-generated java client");
 
     String localVarPath = "/places/by-text";
 
