@@ -41,7 +41,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Model
         /// </summary>
         /// <param name="places">The places which where found. (required).</param>
         /// <param name="warnings">A list of warnings concerning the validity of the result..</param>
-        public PlacesSearchResult(List<Place> places = default(List<Place>), List<Warning> warnings = default(List<Warning>))
+        public PlacesSearchResult(List<Place> places = default, List<Warning> warnings = default)
         {
             // to ensure "places" is required (not null)
             if (places == null)

@@ -43,7 +43,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Model
         /// <param name="bottom">The latitude value in degrees (WGS84/EPSG:4326) from south to north. (required).</param>
         /// <param name="right">The longitude value in degrees (WGS84/EPSG:4326) from west to east. (required).</param>
         /// <param name="top">The latitude value in degrees (WGS84/EPSG:4326) from south to north. (required).</param>
-        public BoundingBox(double? left = default(double?), double? bottom = default(double?), double? right = default(double?), double? top = default(double?))
+        public BoundingBox(double? left = default, double? bottom = default, double? right = default, double? top = default)
         {
             // to ensure "left" is required (not null)
             if (left == null)

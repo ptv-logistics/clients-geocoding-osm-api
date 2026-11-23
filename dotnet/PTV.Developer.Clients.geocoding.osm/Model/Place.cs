@@ -44,7 +44,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Model
         /// <param name="formattedAddress">A single string containing the name and all address elements of a place. (required).</param>
         /// <param name="category">The category of this place, which corresponds to the key of the main OSM tag. (required).</param>
         /// <param name="type">The type of this place, which corresponds to the value of the main OSM tag. Each category is divided into different types. (required).</param>
-        public Place(ReferencePosition referencePosition = default(ReferencePosition), BoundingBox boundingBox = default(BoundingBox), string formattedAddress = default(string), string category = default(string), string type = default(string))
+        public Place(ReferencePosition referencePosition = default, BoundingBox boundingBox = default, string formattedAddress = default, string category = default, string type = default)
         {
             // to ensure "referencePosition" is required (not null)
             if (referencePosition == null)

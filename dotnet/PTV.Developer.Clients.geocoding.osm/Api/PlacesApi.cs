@@ -43,7 +43,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlacesSearchResult</returns>
-        PlacesSearchResult SearchPlacesByAddress(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0);
+        PlacesSearchResult SearchPlacesByAddress(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlacesSearchResult</returns>
-        ApiResponse<PlacesSearchResult> SearchPlacesByAddressWithHttpInfo(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0);
+        ApiResponse<PlacesSearchResult> SearchPlacesByAddressWithHttpInfo(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -76,7 +76,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlacesSearchResult</returns>
-        PlacesSearchResult SearchPlacesByPosition(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0);
+        PlacesSearchResult SearchPlacesByPosition(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlacesSearchResult</returns>
-        ApiResponse<PlacesSearchResult> SearchPlacesByPositionWithHttpInfo(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0);
+        ApiResponse<PlacesSearchResult> SearchPlacesByPositionWithHttpInfo(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0);
         /// <summary>
         /// 
         /// </summary>
@@ -103,7 +103,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlacesSearchResult</returns>
-        PlacesSearchResult SearchPlacesByText(string searchText, List<string> languages = default(List<string>), int operationIndex = 0);
+        PlacesSearchResult SearchPlacesByText(string searchText, List<string> languages = default, int operationIndex = 0);
 
         /// <summary>
         /// 
@@ -116,7 +116,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlacesSearchResult</returns>
-        ApiResponse<PlacesSearchResult> SearchPlacesByTextWithHttpInfo(string searchText, List<string> languages = default(List<string>), int operationIndex = 0);
+        ApiResponse<PlacesSearchResult> SearchPlacesByTextWithHttpInfo(string searchText, List<string> languages = default, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -144,7 +144,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlacesSearchResult</returns>
-        System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByAddressAsync(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByAddressAsync(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -164,7 +164,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlacesSearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlacesSearchResult>> SearchPlacesByAddressWithHttpInfoAsync(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlacesSearchResult>> SearchPlacesByAddressWithHttpInfoAsync(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -179,7 +179,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlacesSearchResult</returns>
-        System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByPositionAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByPositionAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -195,7 +195,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlacesSearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlacesSearchResult>> SearchPlacesByPositionWithHttpInfoAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlacesSearchResult>> SearchPlacesByPositionWithHttpInfoAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -208,7 +208,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlacesSearchResult</returns>
-        System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByTextAsync(string searchText, List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByTextAsync(string searchText, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -222,7 +222,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlacesSearchResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlacesSearchResult>> SearchPlacesByTextWithHttpInfoAsync(string searchText, List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PlacesSearchResult>> SearchPlacesByTextWithHttpInfoAsync(string searchText, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -357,7 +357,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlacesSearchResult</returns>
-        public PlacesSearchResult SearchPlacesByAddress(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0)
+        public PlacesSearchResult SearchPlacesByAddress(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0)
         {
             PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> localVarResponse = SearchPlacesByAddressWithHttpInfo(country, state, province, locality, postalCode, street, houseNumber, languages);
             return localVarResponse.Data;
@@ -377,7 +377,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlacesSearchResult</returns>
-        public PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> SearchPlacesByAddressWithHttpInfo(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0)
+        public PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> SearchPlacesByAddressWithHttpInfo(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0)
         {
             PTV.Developer.Clients.geocoding.osm.Client.RequestOptions localVarRequestOptions = new PTV.Developer.Clients.geocoding.osm.Client.RequestOptions();
 
@@ -390,6 +390,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
             };
 
             var localVarContentType = PTV.Developer.Clients.geocoding.osm.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -472,7 +473,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlacesSearchResult</returns>
-        public async System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByAddressAsync(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByAddressAsync(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> localVarResponse = await SearchPlacesByAddressWithHttpInfoAsync(country, state, province, locality, postalCode, street, houseNumber, languages, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -493,7 +494,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlacesSearchResult)</returns>
-        public async System.Threading.Tasks.Task<PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult>> SearchPlacesByAddressWithHttpInfoAsync(string country = default(string), string state = default(string), string province = default(string), string locality = default(string), string postalCode = default(string), string street = default(string), string houseNumber = default(string), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult>> SearchPlacesByAddressWithHttpInfoAsync(string country = default, string state = default, string province = default, string locality = default, string postalCode = default, string street = default, string houseNumber = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
 
             PTV.Developer.Clients.geocoding.osm.Client.RequestOptions localVarRequestOptions = new PTV.Developer.Clients.geocoding.osm.Client.RequestOptions();
@@ -585,7 +586,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlacesSearchResult</returns>
-        public PlacesSearchResult SearchPlacesByPosition(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0)
+        public PlacesSearchResult SearchPlacesByPosition(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0)
         {
             PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> localVarResponse = SearchPlacesByPositionWithHttpInfo(latitude, longitude, detailLevel, languages);
             return localVarResponse.Data;
@@ -601,7 +602,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlacesSearchResult</returns>
-        public PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> SearchPlacesByPositionWithHttpInfo(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0)
+        public PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> SearchPlacesByPositionWithHttpInfo(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0)
         {
             // verify the required parameter 'latitude' is set
             if (latitude == null)
@@ -626,6 +627,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
             };
 
             var localVarContentType = PTV.Developer.Clients.geocoding.osm.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -682,7 +684,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlacesSearchResult</returns>
-        public async System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByPositionAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByPositionAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> localVarResponse = await SearchPlacesByPositionWithHttpInfoAsync(latitude, longitude, detailLevel, languages, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -699,7 +701,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlacesSearchResult)</returns>
-        public async System.Threading.Tasks.Task<PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult>> SearchPlacesByPositionWithHttpInfoAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default(DetailLevel?), List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult>> SearchPlacesByPositionWithHttpInfoAsync(double? latitude, double? longitude, DetailLevel? detailLevel = default, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'latitude' is set
             if (latitude == null)
@@ -779,7 +781,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PlacesSearchResult</returns>
-        public PlacesSearchResult SearchPlacesByText(string searchText, List<string> languages = default(List<string>), int operationIndex = 0)
+        public PlacesSearchResult SearchPlacesByText(string searchText, List<string> languages = default, int operationIndex = 0)
         {
             PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> localVarResponse = SearchPlacesByTextWithHttpInfo(searchText, languages);
             return localVarResponse.Data;
@@ -793,7 +795,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="languages">A comma-separated list of preferred languages for the response, formatted according to [ISO-639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) for languages or [BCP47](https://tools.ietf.org/html/bcp47) for language variants. These languages are ordered by decreasing priority. In case none of the given preferred languages is available in the data, the default language is used, which is the language spoken in the country or region of the result (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PlacesSearchResult</returns>
-        public PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> SearchPlacesByTextWithHttpInfo(string searchText, List<string> languages = default(List<string>), int operationIndex = 0)
+        public PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> SearchPlacesByTextWithHttpInfo(string searchText, List<string> languages = default, int operationIndex = 0)
         {
             // verify the required parameter 'searchText' is set
             if (searchText == null)
@@ -812,6 +814,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
             };
 
             var localVarContentType = PTV.Developer.Clients.geocoding.osm.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -861,7 +864,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PlacesSearchResult</returns>
-        public async System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByTextAsync(string searchText, List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PlacesSearchResult> SearchPlacesByTextAsync(string searchText, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult> localVarResponse = await SearchPlacesByTextWithHttpInfoAsync(searchText, languages, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -876,7 +879,7 @@ namespace PTV.Developer.Clients.geocoding.osm.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PlacesSearchResult)</returns>
-        public async System.Threading.Tasks.Task<PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult>> SearchPlacesByTextWithHttpInfoAsync(string searchText, List<string> languages = default(List<string>), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PTV.Developer.Clients.geocoding.osm.Client.ApiResponse<PlacesSearchResult>> SearchPlacesByTextWithHttpInfoAsync(string searchText, List<string> languages = default, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'searchText' is set
             if (searchText == null)
