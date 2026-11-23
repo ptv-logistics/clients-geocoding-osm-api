@@ -18,12 +18,14 @@ import {
     WarningFromJSON,
     WarningFromJSONTyped,
     WarningToJSON,
+    WarningToJSONTyped,
 } from './Warning';
 import type { Place } from './Place';
 import {
     PlaceFromJSON,
     PlaceFromJSONTyped,
     PlaceToJSON,
+    PlaceToJSONTyped,
 } from './Place';
 
 /**
@@ -69,10 +71,15 @@ export function PlacesSearchResultFromJSONTyped(json: any, ignoreDiscriminator: 
     };
 }
 
-export function PlacesSearchResultToJSON(value?: PlacesSearchResult | null): any {
+export function PlacesSearchResultToJSON(json: any): PlacesSearchResult {
+    return PlacesSearchResultToJSONTyped(json, false);
+}
+
+export function PlacesSearchResultToJSONTyped(value?: PlacesSearchResult | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
+
     return {
         
         'places': ((value['places'] as Array<any>).map(PlaceToJSON)),

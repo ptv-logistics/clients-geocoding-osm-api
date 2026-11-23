@@ -12,21 +12,22 @@
  * Do not edit the class manually.
  */
 
-
 import * as runtime from '../runtime';
-import type {
-  DetailLevel,
-  ErrorResponse,
-  PlacesSearchResult,
-} from '../models/index';
 import {
+    type DetailLevel,
     DetailLevelFromJSON,
     DetailLevelToJSON,
+} from '../models/DetailLevel';
+import {
+    type ErrorResponse,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+} from '../models/ErrorResponse';
+import {
+    type PlacesSearchResult,
     PlacesSearchResultFromJSON,
     PlacesSearchResultToJSON,
-} from '../models/index';
+} from '../models/PlacesSearchResult';
 
 export interface SearchPlacesByAddressRequest {
     country?: string;
@@ -57,9 +58,9 @@ export interface SearchPlacesByTextRequest {
 export class PlacesApi extends runtime.BaseAPI {
 
     /**
-     * Searches for places based on a multi-field address input.
+     * Creates request options for searchPlacesByAddress without sending the request
      */
-    async searchPlacesByAddressRaw(requestParameters: SearchPlacesByAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
+    async searchPlacesByAddressRequestOpts(requestParameters: SearchPlacesByAddressRequest): Promise<runtime.RequestOpts> {
         const queryParameters: any = {};
 
         if (requestParameters['country'] != null) {
@@ -100,12 +101,23 @@ export class PlacesApi extends runtime.BaseAPI {
             headerParameters["apiKey"] = await this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
         }
 
-        const response = await this.request({
-            path: `/places/by-address`,
+
+        let urlPath = `/places/by-address`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     * Searches for places based on a multi-field address input.
+     */
+    async searchPlacesByAddressRaw(requestParameters: SearchPlacesByAddressRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
+        const requestOptions = await this.searchPlacesByAddressRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PlacesSearchResultFromJSON(jsonValue));
     }
@@ -119,9 +131,9 @@ export class PlacesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Searches for places near a given geographical position.
+     * Creates request options for searchPlacesByPosition without sending the request
      */
-    async searchPlacesByPositionRaw(requestParameters: SearchPlacesByPositionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
+    async searchPlacesByPositionRequestOpts(requestParameters: SearchPlacesByPositionRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['latitude'] == null) {
             throw new runtime.RequiredError(
                 'latitude',
@@ -152,12 +164,25 @@ export class PlacesApi extends runtime.BaseAPI {
             headerParameters["apiKey"] = await this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
         }
 
-        const response = await this.request({
-            path: `/places/by-position/{latitude}/{longitude}`.replace(`{${"latitude"}}`, encodeURIComponent(String(requestParameters['latitude']))).replace(`{${"longitude"}}`, encodeURIComponent(String(requestParameters['longitude']))),
+
+        let urlPath = `/places/by-position/{latitude}/{longitude}`;
+        urlPath = urlPath.replace('{latitude}', encodeURIComponent(String(requestParameters['latitude'])));
+        urlPath = urlPath.replace('{longitude}', encodeURIComponent(String(requestParameters['longitude'])));
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     * Searches for places near a given geographical position.
+     */
+    async searchPlacesByPositionRaw(requestParameters: SearchPlacesByPositionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
+        const requestOptions = await this.searchPlacesByPositionRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PlacesSearchResultFromJSON(jsonValue));
     }
@@ -171,9 +196,9 @@ export class PlacesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Searches for places based on a single-field text input.
+     * Creates request options for searchPlacesByText without sending the request
      */
-    async searchPlacesByTextRaw(requestParameters: SearchPlacesByTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
+    async searchPlacesByTextRequestOpts(requestParameters: SearchPlacesByTextRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['searchText'] == null) {
             throw new runtime.RequiredError(
                 'searchText',
@@ -197,12 +222,23 @@ export class PlacesApi extends runtime.BaseAPI {
             headerParameters["apiKey"] = await this.configuration.apiKey("apiKey"); // apiKeyAuth authentication
         }
 
-        const response = await this.request({
-            path: `/places/by-text`,
+
+        let urlPath = `/places/by-text`;
+
+        return {
+            path: urlPath,
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
-        }, initOverrides);
+        };
+    }
+
+    /**
+     * Searches for places based on a single-field text input.
+     */
+    async searchPlacesByTextRaw(requestParameters: SearchPlacesByTextRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PlacesSearchResult>> {
+        const requestOptions = await this.searchPlacesByTextRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => PlacesSearchResultFromJSON(jsonValue));
     }

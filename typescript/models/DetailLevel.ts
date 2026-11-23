@@ -53,3 +53,7 @@ export function DetailLevelToJSON(value?: DetailLevel | null): any {
     return value as any;
 }
 
+export function DetailLevelToJSONTyped(value: any, ignoreDiscriminator: boolean): DetailLevel {
+    return value as DetailLevel;
+}
+

@@ -73,10 +73,15 @@ export function BoundingBoxFromJSONTyped(json: any, ignoreDiscriminator: boolean
     };
 }
 
-export function BoundingBoxToJSON(value?: BoundingBox | null): any {
+export function BoundingBoxToJSON(json: any): BoundingBox {
+    return BoundingBoxToJSONTyped(json, false);
+}
+
+export function BoundingBoxToJSONTyped(value?: BoundingBox | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }
+
     return {
         
         'left': value['left'],
