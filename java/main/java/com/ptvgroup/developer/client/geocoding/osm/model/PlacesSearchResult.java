@@ -40,18 +40,20 @@ import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
   PlacesSearchResult.JSON_PROPERTY_PLACES,
   PlacesSearchResult.JSON_PROPERTY_WARNINGS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T10:42:30.361356358Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-23T08:20:35.523801833Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class PlacesSearchResult {
   public static final String JSON_PROPERTY_PLACES = "places";
+  @javax.annotation.Nonnull
   private List<Place> places;
 
   public static final String JSON_PROPERTY_WARNINGS = "warnings";
+  @javax.annotation.Nullable
   private List<Warning> warnings;
 
   public PlacesSearchResult() { 
   }
 
-  public PlacesSearchResult places(List<Place> places) {
+  public PlacesSearchResult places(@javax.annotation.Nonnull List<Place> places) {
     this.places = places;
     return this;
   }
@@ -69,21 +71,21 @@ public class PlacesSearchResult {
    * @return places
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_PLACES)
+  @JsonProperty(value = JSON_PROPERTY_PLACES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<Place> getPlaces() {
     return places;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_PLACES)
+  @JsonProperty(value = JSON_PROPERTY_PLACES, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setPlaces(List<Place> places) {
+  public void setPlaces(@javax.annotation.Nonnull List<Place> places) {
     this.places = places;
   }
 
 
-  public PlacesSearchResult warnings(List<Warning> warnings) {
+  public PlacesSearchResult warnings(@javax.annotation.Nullable List<Warning> warnings) {
     this.warnings = warnings;
     return this;
   }
@@ -101,16 +103,16 @@ public class PlacesSearchResult {
    * @return warnings
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_WARNINGS)
+  @JsonProperty(value = JSON_PROPERTY_WARNINGS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public List<Warning> getWarnings() {
     return warnings;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_WARNINGS)
+  @JsonProperty(value = JSON_PROPERTY_WARNINGS, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setWarnings(List<Warning> warnings) {
+  public void setWarnings(@javax.annotation.Nullable List<Warning> warnings) {
     this.warnings = warnings;
   }
 
@@ -151,10 +153,7 @@ public class PlacesSearchResult {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -193,8 +192,8 @@ public class PlacesSearchResult {
     if (getPlaces() != null) {
       for (int i = 0; i < getPlaces().size(); i++) {
         if (getPlaces().get(i) != null) {
-          joiner.add(getPlaces().get(i).toUrlQueryString(String.format("%splaces%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getPlaces().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%splaces%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -203,8 +202,8 @@ public class PlacesSearchResult {
     if (getWarnings() != null) {
       for (int i = 0; i < getWarnings().size(); i++) {
         if (getWarnings().get(i) != null) {
-          joiner.add(getWarnings().get(i).toUrlQueryString(String.format("%swarnings%s%s", prefix, suffix,
-          "".equals(suffix) ? "" : String.format("%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getWarnings().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%swarnings%s%s", prefix, suffix,
+          "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }

@@ -41,27 +41,32 @@ import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
   Place.JSON_PROPERTY_CATEGORY,
   Place.JSON_PROPERTY_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T10:42:30.361356358Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-23T08:20:35.523801833Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class Place {
   public static final String JSON_PROPERTY_REFERENCE_POSITION = "referencePosition";
+  @javax.annotation.Nonnull
   private ReferencePosition referencePosition;
 
   public static final String JSON_PROPERTY_BOUNDING_BOX = "boundingBox";
+  @javax.annotation.Nullable
   private BoundingBox boundingBox;
 
   public static final String JSON_PROPERTY_FORMATTED_ADDRESS = "formattedAddress";
+  @javax.annotation.Nonnull
   private String formattedAddress;
 
   public static final String JSON_PROPERTY_CATEGORY = "category";
+  @javax.annotation.Nonnull
   private String category;
 
   public static final String JSON_PROPERTY_TYPE = "type";
+  @javax.annotation.Nonnull
   private String type;
 
   public Place() { 
   }
 
-  public Place referencePosition(ReferencePosition referencePosition) {
+  public Place referencePosition(@javax.annotation.Nonnull ReferencePosition referencePosition) {
     this.referencePosition = referencePosition;
     return this;
   }
@@ -71,21 +76,21 @@ public class Place {
    * @return referencePosition
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_REFERENCE_POSITION)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_POSITION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ReferencePosition getReferencePosition() {
     return referencePosition;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_REFERENCE_POSITION)
+  @JsonProperty(value = JSON_PROPERTY_REFERENCE_POSITION, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setReferencePosition(ReferencePosition referencePosition) {
+  public void setReferencePosition(@javax.annotation.Nonnull ReferencePosition referencePosition) {
     this.referencePosition = referencePosition;
   }
 
 
-  public Place boundingBox(BoundingBox boundingBox) {
+  public Place boundingBox(@javax.annotation.Nullable BoundingBox boundingBox) {
     this.boundingBox = boundingBox;
     return this;
   }
@@ -95,21 +100,21 @@ public class Place {
    * @return boundingBox
    */
   @javax.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BOUNDING_BOX)
+  @JsonProperty(value = JSON_PROPERTY_BOUNDING_BOX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BoundingBox getBoundingBox() {
     return boundingBox;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BOUNDING_BOX)
+  @JsonProperty(value = JSON_PROPERTY_BOUNDING_BOX, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBoundingBox(BoundingBox boundingBox) {
+  public void setBoundingBox(@javax.annotation.Nullable BoundingBox boundingBox) {
     this.boundingBox = boundingBox;
   }
 
 
-  public Place formattedAddress(String formattedAddress) {
+  public Place formattedAddress(@javax.annotation.Nonnull String formattedAddress) {
     this.formattedAddress = formattedAddress;
     return this;
   }
@@ -119,21 +124,21 @@ public class Place {
    * @return formattedAddress
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_FORMATTED_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_FORMATTED_ADDRESS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFormattedAddress() {
     return formattedAddress;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_FORMATTED_ADDRESS)
+  @JsonProperty(value = JSON_PROPERTY_FORMATTED_ADDRESS, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFormattedAddress(String formattedAddress) {
+  public void setFormattedAddress(@javax.annotation.Nonnull String formattedAddress) {
     this.formattedAddress = formattedAddress;
   }
 
 
-  public Place category(String category) {
+  public Place category(@javax.annotation.Nonnull String category) {
     this.category = category;
     return this;
   }
@@ -143,21 +148,21 @@ public class Place {
    * @return category
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCategory() {
     return category;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_CATEGORY)
+  @JsonProperty(value = JSON_PROPERTY_CATEGORY, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCategory(String category) {
+  public void setCategory(@javax.annotation.Nonnull String category) {
     this.category = category;
   }
 
 
-  public Place type(String type) {
+  public Place type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
@@ -167,16 +172,16 @@ public class Place {
    * @return type
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getType() {
     return type;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TYPE)
+  @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setType(String type) {
+  public void setType(@javax.annotation.Nonnull String type) {
     this.type = type;
   }
 
@@ -223,10 +228,7 @@ public class Place {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -273,17 +275,17 @@ public class Place {
 
     // add `formattedAddress` to the URL query string
     if (getFormattedAddress() != null) {
-      joiner.add(String.format("%sformattedAddress%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getFormattedAddress()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sformattedAddress%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFormattedAddress()))));
     }
 
     // add `category` to the URL query string
     if (getCategory() != null) {
-      joiner.add(String.format("%scategory%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getCategory()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%scategory%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCategory()))));
     }
 
     // add `type` to the URL query string
     if (getType() != null) {
-      joiner.add(String.format("%stype%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getType()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stype%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getType()))));
     }
 
     return joiner.toString();

@@ -38,24 +38,28 @@ import com.ptvgroup.developer.client.geocoding.osm.ApiClient;
   BoundingBox.JSON_PROPERTY_RIGHT,
   BoundingBox.JSON_PROPERTY_TOP
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-27T10:42:30.361356358Z[Etc/UTC]", comments = "Generator version: 7.8.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-23T08:20:35.523801833Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class BoundingBox {
   public static final String JSON_PROPERTY_LEFT = "left";
+  @javax.annotation.Nonnull
   private Double left;
 
   public static final String JSON_PROPERTY_BOTTOM = "bottom";
+  @javax.annotation.Nonnull
   private Double bottom;
 
   public static final String JSON_PROPERTY_RIGHT = "right";
+  @javax.annotation.Nonnull
   private Double right;
 
   public static final String JSON_PROPERTY_TOP = "top";
+  @javax.annotation.Nonnull
   private Double top;
 
   public BoundingBox() { 
   }
 
-  public BoundingBox left(Double left) {
+  public BoundingBox left(@javax.annotation.Nonnull Double left) {
     this.left = left;
     return this;
   }
@@ -67,21 +71,21 @@ public class BoundingBox {
    * @return left
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_LEFT)
+  @JsonProperty(value = JSON_PROPERTY_LEFT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Double getLeft() {
     return left;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_LEFT)
+  @JsonProperty(value = JSON_PROPERTY_LEFT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setLeft(Double left) {
+  public void setLeft(@javax.annotation.Nonnull Double left) {
     this.left = left;
   }
 
 
-  public BoundingBox bottom(Double bottom) {
+  public BoundingBox bottom(@javax.annotation.Nonnull Double bottom) {
     this.bottom = bottom;
     return this;
   }
@@ -93,21 +97,21 @@ public class BoundingBox {
    * @return bottom
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_BOTTOM)
+  @JsonProperty(value = JSON_PROPERTY_BOTTOM, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Double getBottom() {
     return bottom;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_BOTTOM)
+  @JsonProperty(value = JSON_PROPERTY_BOTTOM, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setBottom(Double bottom) {
+  public void setBottom(@javax.annotation.Nonnull Double bottom) {
     this.bottom = bottom;
   }
 
 
-  public BoundingBox right(Double right) {
+  public BoundingBox right(@javax.annotation.Nonnull Double right) {
     this.right = right;
     return this;
   }
@@ -119,21 +123,21 @@ public class BoundingBox {
    * @return right
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_RIGHT)
+  @JsonProperty(value = JSON_PROPERTY_RIGHT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Double getRight() {
     return right;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_RIGHT)
+  @JsonProperty(value = JSON_PROPERTY_RIGHT, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setRight(Double right) {
+  public void setRight(@javax.annotation.Nonnull Double right) {
     this.right = right;
   }
 
 
-  public BoundingBox top(Double top) {
+  public BoundingBox top(@javax.annotation.Nonnull Double top) {
     this.top = top;
     return this;
   }
@@ -145,16 +149,16 @@ public class BoundingBox {
    * @return top
    */
   @javax.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TOP)
+  @JsonProperty(value = JSON_PROPERTY_TOP, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Double getTop() {
     return top;
   }
 
 
-  @JsonProperty(JSON_PROPERTY_TOP)
+  @JsonProperty(value = JSON_PROPERTY_TOP, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setTop(Double top) {
+  public void setTop(@javax.annotation.Nonnull Double top) {
     this.top = top;
   }
 
@@ -199,10 +203,7 @@ public class BoundingBox {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -239,22 +240,22 @@ public class BoundingBox {
 
     // add `left` to the URL query string
     if (getLeft() != null) {
-      joiner.add(String.format("%sleft%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getLeft()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sleft%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLeft()))));
     }
 
     // add `bottom` to the URL query string
     if (getBottom() != null) {
-      joiner.add(String.format("%sbottom%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getBottom()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbottom%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBottom()))));
     }
 
     // add `right` to the URL query string
     if (getRight() != null) {
-      joiner.add(String.format("%sright%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getRight()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%sright%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRight()))));
     }
 
     // add `top` to the URL query string
     if (getTop() != null) {
-      joiner.add(String.format("%stop%s=%s", prefix, suffix, URLEncoder.encode(ApiClient.valueToString(getTop()), StandardCharsets.UTF_8).replaceAll("\\+", "%20")));
+      joiner.add(String.format(java.util.Locale.ROOT, "%stop%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTop()))));
     }
 
     return joiner.toString();
